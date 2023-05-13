@@ -10,6 +10,13 @@ namespace InGame.Player
         [Header("走るスピード")]
         [SerializeField] private float runningSpeed = 10f;
 
+        protected override void Start()
+        {
+            base.Start();
+
+            interruptionAllowed = true;
+        }
+
         public override void StartAction()
         {
             player.StartAnimation(animationName);

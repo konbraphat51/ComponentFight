@@ -18,6 +18,11 @@ namespace InGame.Player
 
         public bool isRightPlayer { get { return _isRightPlayer; } }
 
+        [Header("最初のHP")]
+        [SerializeField] private int _hp = 100;
+        public int hp { get { return _hp; } }
+        public int hpMax { get; private set; }
+
         private PlayerAction[] actions;
 
         //nullなら静止中
@@ -32,6 +37,9 @@ namespace InGame.Player
         {
             //アクション読み込み
             actions = GetComponents<PlayerAction>();
+
+            //最大hp記憶
+            hpMax = hp;
         }
 
         private void Update()
@@ -116,6 +124,11 @@ namespace InGame.Player
             {
                 animator.Play(stateName);
             }
+        }
+
+        public float GetHPRatio()
+        {
+            return (float)hp / (float)hpMax;
         }
     }
 }
