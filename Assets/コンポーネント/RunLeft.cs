@@ -10,6 +10,8 @@ namespace InGame.Player
         [Header("走るスピード")]
         [SerializeField] private float runningSpeed = 10f;
 
+        public KeyCode TriggerKey { get { return triggerKey; } }
+
         protected override void Start()
         {
             base.Start();

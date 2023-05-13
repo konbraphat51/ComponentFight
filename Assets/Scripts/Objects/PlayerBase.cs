@@ -26,7 +26,7 @@ namespace InGame.Player
         private PlayerAction[] actions;
 
         //null‚È‚çÃ~’†
-        private PlayerAction actionCurrent;
+        public PlayerAction actionCurrent { get; private set; }
 
         /// <summary>
         /// false‚È‚ç¶‚ğŒü‚¢‚Ä‚¢‚é
