@@ -62,5 +62,7 @@ namespace InGame.Player
 
         public abstract void StartAction();
         public abstract void UpdateAction();
+
+        public virtual void OnAnimationEnd() { }
     }
 }

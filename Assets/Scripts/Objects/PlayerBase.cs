@@ -14,9 +14,18 @@ namespace InGame.Player
         [Tooltip("‰Šúó‘Ô‚Å‚Ç‚Á‚¿‚ÌƒvƒŒƒCƒ„[‚©")]
         [SerializeField] private bool _isRightPlayer = false;
 
+        [Header("=‚¢‚¶‚ç‚È‚¢‚Å=")]
+        [SerializeField] private HitArea _hitAreaLeft;
+
+        [Header("=‚¢‚¶‚ç‚È‚¢‚Å=")]
+        [SerializeField] private HitArea _hitAreaRight;
+
         private const string waitAnimation = "Waiting";
 
         public bool isRightPlayer { get { return _isRightPlayer; } }
+
+        public HitArea hitAreaRight { get { return _hitAreaRight; } }
+        public HitArea hitAreaLeft { get { return _hitAreaLeft; } }
 
         [Header("Å‰‚ÌHP")]
         [SerializeField] private int _hp = 100;
@@ -126,9 +135,37 @@ namespace InGame.Player
             }
         }
 
+        public void OnAnimationEnd()
+        {
+            if (actionCurrent != null)
+            {
+                actionCurrent.OnAnimationEnd();
+            }
+        }
+
         public float GetHPRatio()
         {
             return (float)hp / (float)hpMax;
+        }
+
+        /// <summary>
+        /// Œü‚¢‚Ä‚¢‚é•û‚ÌHitArea
+        /// </summary>
+        public HitArea GetHitArea()
+        {
+            if (lookingRight)
+            {
+                return hitAreaRight;
+            }
+            else
+            {
+                return hitAreaLeft;
+            }
+        }
+
+        public void TakeDamage(int damage)
+        {
+            _hp -= damage;
         }
     }
 }
