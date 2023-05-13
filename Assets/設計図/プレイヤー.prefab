@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6672447659130431948}
   - component: {fileID: 5345810199170521975}
   - component: {fileID: 8234868060311254365}
+  - component: {fileID: 1820124292077209160}
+  - component: {fileID: 7558574893457917793}
   m_Layer: 0
   m_Name: "\u30D7\u30EC\u30A4\u30E4\u30FC"
   m_TagString: Untagged
@@ -168,3 +170,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverseWhenLookingRight: 0
+  _isRightPlayer: 0
+--- !u!114 &1820124292077209160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000504159047043324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee74838f52856245888bc3776482acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyLeft: 100
+  keyRight: 275
+  runningSpeed: 10
+--- !u!114 &7558574893457917793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000504159047043324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88720a189f2a16c44a400b30fe47092d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyLeft: 97
+  keyRight: 276
+  runningSpeed: 10
